@@ -7,7 +7,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-mongoose.connect( 'mongodb://localhost/redux_auth' );
+
+let mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/redux_auth'
+mongoose.connect(mongoUri)
 
 var routes = require('./routes/index');
 var auth = require('./routes/auth');
