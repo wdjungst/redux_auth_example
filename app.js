@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-let mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/redux_auth'
+var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/redux_auth'
 mongoose.connect(mongoUri)
 
 var routes = require('./routes/index');
